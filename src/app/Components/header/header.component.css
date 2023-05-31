@@ -1,0 +1,11 @@
+.myheader{
+    width: 90%;
+}
+
+.stopflexgrow{
+    flex-grow: 0;
+}
+
+/* .disabled-link {
+    pointer-events: none;
+  } */

@@ -1,0 +1,73 @@
+.herosection{
+    background-color: rgba(55,106,166,255);
+}
+
+
+.aboveTableSection{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+.adduserbtn{
+    background-color: white;
+    color: rgba(55,106,166,255) ;
+    font-weight: bold;
+    /* padding: 5px 50px; */
+    /* margin-right: 50px; */
+}
+
+.adduserbtn:hover{
+    opacity: 0.9;
+}
+.tableContainer{
+    background-color: rgba(247,247,247,255);
+    min-height: 100vh;
+    overflow-x: scroll;
+}
+.tableContainer table{
+background-color: white;
+box-shadow: 1px 1px 1px 1px ;
+}
+
+table a{
+    color: black;
+}
+
+.ActiveButton{
+    width: 100px;
+    height: 40px;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+}
+.ActiveButton:hover{
+    background-color: rgba(55,106,166,255);
+    color: white;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+    th, td {
+      display: block;
+    }
+    thead {
+        display: none;
+      }
+      
+  }
+
+
+
+
+

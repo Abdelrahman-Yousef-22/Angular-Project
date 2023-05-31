@@ -1,0 +1,29 @@
+<div *ngIf="userData" class="userDetails">
+    <div class="details">
+        <span class="detail name" >{{userData.name}}</span>
+        <div class="detail emailandphone">
+
+            <p>{{userData.email}}</p>
+            <p>{{userData.phone}}</p>
+        </div>
+        <div class="detail address">
+
+            <p>address</p>
+            <p>{{userData.address.street}} {{userData.address.city}}</p>
+        </div>
+    </div>  
+</div>
+
+<div *ngIf="userData" class="userName">
+   <p>{{userData.name}}'s Albums</p>
+</div>
+<!-- <div *ngIf="userAlbums && userAlbums.length>0"  class=" Album_Container"> -->
+<div  class=" Album_Container">
+    
+    <a class="Album" *ngFor="let album of userAlbums" routerLink="album/{{album.id}}">
+        <div  >
+            <p >ALBUM {{album.id}}</p>
+        </div>
+    </a> 
+    
+</div>

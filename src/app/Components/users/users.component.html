@@ -1,0 +1,42 @@
+<div class="herosection">
+  <div class="aboveTableSection w-75 m-auto">
+    <span class="text-white fs-5" >Users</span>
+    <a class=" adduserbtn me-md-5 p-2 py-sm-1 px-sm-5" routerLink="AddUser">+ Add User</a>
+  </div>
+</div>
+
+<div class="tableContainer">
+    <table class="table w-75 w-md-50 m-auto shadow ">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of usersData">
+            <th scope="row"><a routerLink="user/{{user.id}}">{{user.name}}</a></th>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.address.street}} , {{user.address.city}}</td>
+            <td>
+              <a class="btn btn-outline-primary ActiveButton mx-1 my-1 my-xxl-0 " routerLink="updataUser/{{user.id}}">Update</a>
+              <a  class="btn btn-outline-primary ActiveButton mx-1" (click)="DeleteUser(user.id,user.name)"  >Delete</a>
+              <!-- <a routerLink="users" (click)="DeleteUser(user.id,user.name)" class="btn btn-outline-success" >Delete</a> -->
+            </td>
+          </tr>
+          
+        </tbody>
+    </table>
+</div>
+
+
+<!-- <div class="alert alert-dark" *ngFor="let user of usersData">
+    <p>name:<a routerLink="user/{{user.id}}">{{user.name}}</a></p>
+    <p>name:{{user.email}}</p>
+    <p>name:{{user.phone}}</p>
+
+</div> -->

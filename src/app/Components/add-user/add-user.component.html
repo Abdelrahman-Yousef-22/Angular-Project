@@ -1,0 +1,101 @@
+
+<div class="herosection">
+    <div class="aboveTableSection w-75 m-auto">
+    </div>
+</div>
+
+<p class="userInformation m-2">User Information</p>
+
+
+
+
+<!-- adding new user form if there is no updateuserdata -->
+<form *ngIf="!updateUserData ; else updateuser" ngNativeValidate class=" form m-auto "  (ngSubmit)="AddUser(name.value,email.value,phone.value,city.value,street.value,suite.value)"> 
+    <!--  -->
+    <div class="d-flex flex-column justify-content-between">
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input required placeholder="eg: Abdo Yousef"  type="text" class="form-control inputsByUser   " id="name" #name aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 ">
+            <label for="email" class="form-label fw-bold">Email Address</label>
+            <input required placeholder="eg: Abdoyky@gmail.com" type="email" class="form-control inputsByUser   " id="email" #email aria-describedby="emailHelp">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label fw-bold">Phone</label>
+        <input required placeholder="eg: 01143066698" type="number" class="form-control inputsByUser " id="phone" #phone aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label fw-bold">Address</label>
+        <div class="d-flex flex-column justify-content-between">
+            <input required type="text" placeholder="City"  class="form-control m-1   inputsByUser" id="city"  #city  aria-describedby="emailHelp">
+            <input required type="text" placeholder="Street" class="form-control m-1  inputsByUser" id="street"  #street  aria-describedby="emailHelp">
+            <input required type="text" placeholder="Suite" class="form-control m-1  inputsByUser" id="suite"  #suite  aria-describedby="emailHelp">
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary submitButton   py-2 d-block m-auto rounded-0 my-5 fs-4" value="Save">
+    <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+  </form>
+
+
+  <!-- update  userdata form if there is updateuserdata -->
+
+
+<ng-template #updateuser>
+
+  <form  ngNativeValidate class=" form m-auto "  (ngSubmit)="UpdateUser(name.value,email.value,phone.value,city.value,street.value,suite.value)"> 
+    <!--  -->
+    <div class="d-flex flex-column justify-content-between">
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input value="{{updateUserData.name}}" required placeholder="eg: Abdo Yousef"  type="text" class="form-control inputsByUser   " id="name" #name aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 ">
+            <label for="email" class="form-label fw-bold">Email Address</label>
+            <input value="{{updateUserData.email}}" required placeholder="eg: Abdoyky@gmail.com" type="email" class="form-control inputsByUser   " id="email" #email aria-describedby="emailHelp">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label fw-bold">Phone</label>
+        <input value="{{updateUserData.phone}}" required placeholder="eg: 01143066698" type="text" class="form-control inputsByUser " id="phone" #phone aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label fw-bold">Address</label>
+        <div class="d-flex flex-column justify-content-between">
+            <input value="{{updateUserData.address.city}}" required type="text" placeholder="City"  class="form-control m-1   inputsByUser" id="city"  #city  aria-describedby="emailHelp">
+            <input value="{{updateUserData.address.street}}" required type="text" placeholder="Street" class="form-control m-1  inputsByUser" id="street"  #street  aria-describedby="emailHelp">
+            <input value="{{updateUserData.address.suite}}" required type="text" placeholder="Suite" class="form-control m-1  inputsByUser" id="suite"  #suite  aria-describedby="emailHelp">
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary submitButton   py-2 d-block m-auto rounded-0 my-5 fs-4" value="Update">
+    <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+  </form>
+</ng-template>
+  
+
+  <!-- <ng-template #updateuser>
+    <form  ngNativeValidate class="w-25 m-auto"  (ngSubmit)="UpdateUser(name.value,email.value,phone.value,city.value,street.value,suite.value)"> 
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input value="{{updateUserData.name}}" required  type="text" class="form-control" id="name" #name aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input value="{{updateUserData.email}}" required type="email" class="form-control" id="email" #email aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input value="{{updateUserData.phone}}" required type="text" class="form-control" id="phone" #phone aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">Address</label>
+            <input value="{{updateUserData.address.city}}" required type="text" class="form-control" id="city"  #city placeholder="city" aria-describedby="emailHelp">
+            <input value="{{updateUserData.address.street}}" required type="text" class="form-control" id="street"  #street placeholder="street" aria-describedby="emailHelp">
+            <input value="{{updateUserData.address.suite}}" required type="text" class="form-control" id="suite"  #suite placeholder="suite" aria-describedby="emailHelp">
+        </div>
+        
+    
+        <input type="submit" class="btn btn-primary" value="Update">
+      </form>
+  </ng-template> -->

@@ -1,0 +1,64 @@
+.herosection{
+    background-color: rgba(55,106,166,255);
+}
+
+
+.aboveTableSection{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+
+.userInformation{
+    text-align: center;
+    color: rgba(225,112,84,255);
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+
+}
+
+
+.inputsByUser{
+    background-color: rgba(242,242,242,255);
+    padding: 10px;
+    border-radius: 0;
+}
+
+
+.submitButton{
+    background-color: rgba(55,106,166,255);
+    width: 100%;
+
+}
+
+.submitButton:hover{
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+form{
+    width: 75%;
+}
+
+
+/* ::placeholder {
+    font-size: 10px;
+  } */
+
+  @media (min-width:750px) {
+    form{
+        width: 50%;
+    }
+  }
+  @media (min-width:1024px) {
+    form{
+        max-width: 30%;
+    }
+  }
+  @media (min-width:750px) {
+    
+  }
+

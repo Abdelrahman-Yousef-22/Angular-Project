@@ -1,0 +1,31 @@
+<div *ngIf="userData" class="userDetails">
+    <div class="details">
+        <span class="detail name" >{{userData.name}}</span>
+        <div class="detail emailandphone">
+
+            <p>{{userData.email}}</p>
+            <p>{{userData.phone}}</p>
+        </div>
+        <div class="detail address">
+
+            <p>address</p>
+            <p>{{userData.address.street}} {{userData.address.city}}</p>
+        </div>
+    </div>  
+</div>
+
+   <p class="PhotosParagraph">Photos</p>
+
+<div *ngIf="photos; else loading" class="container">
+    <div Class="photo"  *ngFor="let photo of photos">
+        <img src="{{photo.url}}" alt="">
+    </div>
+</div>
+
+
+<ng-template #loading>
+<div style="color: red; text-align: center;">
+   <h1>loading........</h1> 
+</div>
+</ng-template>
+
